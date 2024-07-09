@@ -4,6 +4,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+
+
 class ChatBotPage extends StatefulWidget {
   ChatBotPage({super.key});
 
@@ -13,8 +15,8 @@ class ChatBotPage extends StatefulWidget {
 
 class _ChatBotPageState extends State<ChatBotPage> {
   List messages = [
-    {"message": "Hello", "type": "user"},
-    {"message": "How can i help you", "type": "assistant"},
+    {"message": "Bonjour", "type": "user"},
+    {"message": "Comment puis-je vous aider", "type": "assistant"},
   ];
 
   TextEditingController queryController = TextEditingController();
@@ -24,9 +26,9 @@ class _ChatBotPageState extends State<ChatBotPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).primaryColorDark,
         title: Text(
-          "Chat Bot",
+          "AI Chat bot",
           style: TextStyle(color: Theme.of(context).indicatorColor),
         ),
       ),
@@ -43,8 +45,8 @@ class _ChatBotPageState extends State<ChatBotPage> {
                   return Column(
                     children: [
                       ListTile(
-                        trailing: isUser ? Icon(Icons.person) : null,
-                        leading: !isUser ? Icon(Icons.support_agent) : null,
+                        trailing: isUser ? Icon(Icons.account_circle_sharp) : null,
+                        leading: !isUser ? Icon(Icons.add_home_work_rounded) : null,
                         title: Row(
                           children: [
                             SizedBox(
@@ -58,7 +60,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
                                       Theme.of(context).textTheme.headlineSmall,
                                 ),
                                 color: isUser
-                                    ? Color.fromARGB(100, 0, 200, 0)
+                                    ? Colors.blueAccent
                                     : Colors.white,
                                 padding: EdgeInsets.all(10),
                               ),
@@ -71,7 +73,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
                       ),
                       Divider(
                         height: 1,
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).primaryColorDark,
                       ),
                     ],
                   );
@@ -103,7 +105,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
                         Uri.https("api.openai.com", "/v1/chat/completions");
                     Map<String, String> headers = {
                       "Content-Type": "application/json",
-                      "Authorization": "Bearer ......"
+                      "Authorization": "Bearer sk-proj-Pnptc6hvxJZofFJlLyOXT3BlbkFJuCBqYH5dnAWkUeK9wXlD"
                     };
                     var prompt = {
                       "model": "gpt-3.5-turbo",

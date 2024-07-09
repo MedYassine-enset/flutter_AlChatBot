@@ -1,7 +1,6 @@
 import 'package:chat_bot_app/chat.bot.page.dart';
 import 'package:flutter/material.dart';
 
-import 'home.page.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/chat": (context) => ChatBotPage(),
       },
-      home: HomePage(),
+      home: ChatBotPage(),
     );
   }
 }
