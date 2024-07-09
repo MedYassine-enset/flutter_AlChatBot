@@ -105,7 +105,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
                         Uri.https("api.openai.com", "/v1/chat/completions");
                     Map<String, String> headers = {
                       "Content-Type": "application/json",
-                      "Authorization": "Bearer ###########################################"
+                      "Authorization": "Bearer ..."
                     };
                     var prompt = {
                       "model": "gpt-3.5-turbo",
